@@ -115,41 +115,26 @@ class CreateChatCompletionJsonBody:
             for messages_item_data in self.messages:
                 messages_item: Dict[str, Any]
 
-                if isinstance(messages_item_data, CreateChatCompletionJsonBodyMessagesItemType0):
-                    messages_item = messages_item_data.to_dict()
-
-                elif isinstance(messages_item_data, CreateChatCompletionJsonBodyMessagesItemType1):
-                    messages_item = messages_item_data.to_dict()
-
-                elif isinstance(messages_item_data, CreateChatCompletionJsonBodyMessagesItemType2):
-                    messages_item = messages_item_data.to_dict()
-
-                elif isinstance(messages_item_data, CreateChatCompletionJsonBodyMessagesItemType3):
-                    messages_item = messages_item_data.to_dict()
-
-                else:
-                    messages_item = messages_item_data.to_dict()
+                messages_item = messages_item_data.to_dict()
 
                 messages.append(messages_item)
 
         function_call: Union[Dict[str, Any], Unset, str]
+        function_call = UNSET
+
         if isinstance(self.function_call, Unset):
-            function_call = UNSET
-
-        elif isinstance(self.function_call, CreateChatCompletionJsonBodyFunctionCallType0):
-            function_call = UNSET
-            if not isinstance(self.function_call, Unset):
-                function_call = self.function_call.value
-
-        elif isinstance(self.function_call, CreateChatCompletionJsonBodyFunctionCallType1):
-            function_call = UNSET
-            if not isinstance(self.function_call, Unset):
-                function_call = self.function_call.value
+            pass
+        elif isinstance(
+            self.function_call,
+            (
+                CreateChatCompletionJsonBodyFunctionCallType0,
+                CreateChatCompletionJsonBodyFunctionCallType1,
+            ),
+        ):
+            function_call = self.function_call.value
 
         else:
-            function_call = UNSET
-            if not isinstance(self.function_call, Unset):
-                function_call = self.function_call.to_dict()
+            function_call = self.function_call.to_dict()
 
         functions: Union[Unset, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.functions, Unset):
@@ -160,23 +145,21 @@ class CreateChatCompletionJsonBody:
                 functions.append(functions_item)
 
         tool_choice: Union[Dict[str, Any], Unset, str]
+        tool_choice = UNSET
+
         if isinstance(self.tool_choice, Unset):
-            tool_choice = UNSET
-
-        elif isinstance(self.tool_choice, CreateChatCompletionJsonBodyToolChoiceType0):
-            tool_choice = UNSET
-            if not isinstance(self.tool_choice, Unset):
-                tool_choice = self.tool_choice.value
-
-        elif isinstance(self.tool_choice, CreateChatCompletionJsonBodyToolChoiceType1):
-            tool_choice = UNSET
-            if not isinstance(self.tool_choice, Unset):
-                tool_choice = self.tool_choice.value
+            pass
+        elif isinstance(
+            self.tool_choice,
+            (
+                CreateChatCompletionJsonBodyToolChoiceType0,
+                CreateChatCompletionJsonBodyToolChoiceType1,
+            ),
+        ):
+            tool_choice = self.tool_choice.value
 
         else:
-            tool_choice = UNSET
-            if not isinstance(self.tool_choice, Unset):
-                tool_choice = self.tool_choice.to_dict()
+            tool_choice = self.tool_choice.to_dict()
 
         tools: Union[Unset, List[Dict[str, Any]]] = UNSET
         if not isinstance(self.tools, Unset):

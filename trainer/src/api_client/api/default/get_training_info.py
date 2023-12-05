@@ -13,11 +13,7 @@ def _get_kwargs(
     *,
     fine_tune_id: str,
 ) -> Dict[str, Any]:
-    pass
-
-    params: Dict[str, Any] = {}
-    params["fineTuneId"] = fine_tune_id
-
+    params: Dict[str, Any] = {"fineTuneId": fine_tune_id}
     params = {k: v for k, v in params.items() if v is not UNSET and v is not None}
 
     return {
@@ -31,9 +27,7 @@ def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
 ) -> Optional[GetTrainingInfoResponse200]:
     if response.status_code == HTTPStatus.OK:
-        response_200 = GetTrainingInfoResponse200.from_dict(response.json())
-
-        return response_200
+        return GetTrainingInfoResponse200.from_dict(response.json())
     if client.raise_on_unexpected_status:
         raise errors.UnexpectedStatus(response.status_code, response.content)
     else:

@@ -59,12 +59,10 @@ class LocalTestingOnlyGetLatestLoggedCallResponse200ModelResponse:
 
         resp_payload = d.pop("respPayload", UNSET)
 
-        local_testing_only_get_latest_logged_call_response_200_model_response = cls(
+        return cls(
             id=id,
             status_code=status_code,
             error_message=error_message,
             req_payload=req_payload,
             resp_payload=resp_payload,
         )
-
-        return local_testing_only_get_latest_logged_call_response_200_model_response

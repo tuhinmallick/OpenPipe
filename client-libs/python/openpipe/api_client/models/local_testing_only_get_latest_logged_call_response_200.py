@@ -74,11 +74,9 @@ class LocalTestingOnlyGetLatestLoggedCallResponse200:
         else:
             model_response = LocalTestingOnlyGetLatestLoggedCallResponse200ModelResponse.from_dict(_model_response)
 
-        local_testing_only_get_latest_logged_call_response_200 = cls(
+        return cls(
             created_at=created_at,
             cache_hit=cache_hit,
             tags=tags,
             model_response=model_response,
         )
-
-        return local_testing_only_get_latest_logged_call_response_200

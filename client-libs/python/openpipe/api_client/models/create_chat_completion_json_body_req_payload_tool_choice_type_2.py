@@ -66,9 +66,7 @@ class CreateChatCompletionJsonBodyReqPayloadToolChoiceType2:
         else:
             function = CreateChatCompletionJsonBodyReqPayloadToolChoiceType2Function.from_dict(_function)
 
-        create_chat_completion_json_body_req_payload_tool_choice_type_2 = cls(
+        return cls(
             type=type,
             function=function,
         )
-
-        return create_chat_completion_json_body_req_payload_tool_choice_type_2

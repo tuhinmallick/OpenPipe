@@ -115,7 +115,7 @@ def get_chat_completion_json(completion: ChatCompletion) -> Dict:
         Custom serializer function for objects, arrays, and other types.
         Excludes fields with None values unless specified.
         """
-        if isinstance(data, list) or isinstance(data, tuple):
+        if isinstance(data, (list, tuple)):
             # Recursively process each element in the list or tuple
             return [serialize(item) for item in data]
 

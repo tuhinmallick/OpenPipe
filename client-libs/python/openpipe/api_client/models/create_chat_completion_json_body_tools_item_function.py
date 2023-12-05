@@ -57,10 +57,8 @@ class CreateChatCompletionJsonBodyToolsItemFunction:
 
         description = d.pop("description", UNSET)
 
-        create_chat_completion_json_body_tools_item_function = cls(
+        return cls(
             name=name,
             parameters=parameters,
             description=description,
         )
-
-        return create_chat_completion_json_body_tools_item_function

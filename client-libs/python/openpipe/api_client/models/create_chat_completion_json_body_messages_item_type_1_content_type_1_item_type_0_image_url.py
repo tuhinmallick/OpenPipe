@@ -37,34 +37,12 @@ class CreateChatCompletionJsonBodyMessagesItemType1ContentType1ItemType0ImageUrl
     def to_dict(self) -> Dict[str, Any]:
         url = self.url
         detail: Union[Unset, str]
-        if isinstance(self.detail, Unset):
-            detail = UNSET
+        detail = UNSET
 
-        elif isinstance(
-            self.detail, CreateChatCompletionJsonBodyMessagesItemType1ContentType1ItemType0ImageUrlDetailType0
-        ):
-            detail = UNSET
-            if not isinstance(self.detail, Unset):
-                detail = self.detail.value
+        if not isinstance(self.detail, Unset):
+            detail = self.detail.value
 
-        elif isinstance(
-            self.detail, CreateChatCompletionJsonBodyMessagesItemType1ContentType1ItemType0ImageUrlDetailType1
-        ):
-            detail = UNSET
-            if not isinstance(self.detail, Unset):
-                detail = self.detail.value
-
-        else:
-            detail = UNSET
-            if not isinstance(self.detail, Unset):
-                detail = self.detail.value
-
-        field_dict: Dict[str, Any] = {}
-        field_dict.update(
-            {
-                "url": url,
-            }
-        )
+        field_dict: Dict[str, Any] = {"url": url}
         if detail is not UNSET:
             field_dict["detail"] = detail
 

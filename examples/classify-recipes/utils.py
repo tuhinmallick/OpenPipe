@@ -25,7 +25,7 @@ def merge_lora_model(config_file: str):
 
     print("Loading PEFT model")
     model = PeftModel.from_pretrained(model, lora_model)
-    print(f"Running merge_and_unload")
+    print("Running merge_and_unload")
     model = model.merge_and_unload()
 
     tokenizer = AutoTokenizer.from_pretrained(base_model)

@@ -55,7 +55,7 @@ def do_train(fine_tune_id: str, base_url: str, model_dir: str):
     urllib.request.urlretrieve(training_info.training_data_url, training_file)
 
     # Count the number of lines in the training data
-    num_lines = sum(1 for line in open(training_file))
+    num_lines = sum(1 for _ in open(training_file))
 
     # Target 10,000 training entries, but don't go under 1 or over 10 epochs.
     num_epochs = min(max(1, int(10000 / num_lines + 0.5)), 10)

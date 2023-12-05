@@ -91,7 +91,7 @@ class CreateChatCompletionResponse200:
         else:
             usage = CreateChatCompletionResponse200Usage.from_dict(_usage)
 
-        create_chat_completion_response_200 = cls(
+        return cls(
             id=id,
             object_=object_,
             created=created,
@@ -99,5 +99,3 @@ class CreateChatCompletionResponse200:
             choices=choices,
             usage=usage,
         )
-
-        return create_chat_completion_response_200

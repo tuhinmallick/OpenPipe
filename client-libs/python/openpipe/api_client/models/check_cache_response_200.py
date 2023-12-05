@@ -31,8 +31,6 @@ class CheckCacheResponse200:
         d = src_dict.copy()
         resp_payload = d.pop("respPayload", UNSET)
 
-        check_cache_response_200 = cls(
+        return cls(
             resp_payload=resp_payload,
         )
-
-        return check_cache_response_200

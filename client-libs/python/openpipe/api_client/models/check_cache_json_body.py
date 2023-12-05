@@ -32,12 +32,7 @@ class CheckCacheJsonBody:
         if not isinstance(self.tags, Unset):
             tags = self.tags.to_dict()
 
-        field_dict: Dict[str, Any] = {}
-        field_dict.update(
-            {
-                "requestedAt": requested_at,
-            }
-        )
+        field_dict: Dict[str, Any] = {"requestedAt": requested_at}
         if req_payload is not UNSET:
             field_dict["reqPayload"] = req_payload
         if tags is not UNSET:
@@ -61,10 +56,8 @@ class CheckCacheJsonBody:
         else:
             tags = CheckCacheJsonBodyTags.from_dict(_tags)
 
-        check_cache_json_body = cls(
+        return cls(
             requested_at=requested_at,
             req_payload=req_payload,
             tags=tags,
         )
-
-        return check_cache_json_body

@@ -37,9 +37,7 @@ class CreateChatCompletionJsonBodyMessagesItemType2FunctionCall:
 
         arguments = d.pop("arguments")
 
-        create_chat_completion_json_body_messages_item_type_2_function_call = cls(
+        return cls(
             name=name,
             arguments=arguments,
         )
-
-        return create_chat_completion_json_body_messages_item_type_2_function_call

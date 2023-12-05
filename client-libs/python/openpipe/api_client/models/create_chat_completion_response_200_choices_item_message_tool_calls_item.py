@@ -58,10 +58,8 @@ class CreateChatCompletionResponse200ChoicesItemMessageToolCallsItem:
 
         type = CreateChatCompletionResponse200ChoicesItemMessageToolCallsItemType(d.pop("type"))
 
-        create_chat_completion_response_200_choices_item_message_tool_calls_item = cls(
+        return cls(
             id=id,
             function=function,
             type=type,
         )
-
-        return create_chat_completion_response_200_choices_item_message_tool_calls_item

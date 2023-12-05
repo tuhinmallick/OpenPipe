@@ -12,8 +12,6 @@ from ...types import Response
 
 
 def _get_kwargs() -> Dict[str, Any]:
-    pass
-
     return {
         "method": "get",
         "url": "/local-testing-only-get-latest-logged-call",
@@ -26,12 +24,13 @@ def _parse_response(
     if response.status_code == HTTPStatus.OK:
         _response_200 = response.json()
         response_200: Optional[LocalTestingOnlyGetLatestLoggedCallResponse200]
-        if _response_200 is None:
-            response_200 = None
-        else:
-            response_200 = LocalTestingOnlyGetLatestLoggedCallResponse200.from_dict(_response_200)
-
-        return response_200
+        return (
+            None
+            if _response_200 is None
+            else LocalTestingOnlyGetLatestLoggedCallResponse200.from_dict(
+                _response_200
+            )
+        )
     if client.raise_on_unexpected_status:
         raise errors.UnexpectedStatus(response.status_code, response.content)
     else:

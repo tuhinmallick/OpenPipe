@@ -52,9 +52,7 @@ class CreateChatCompletionJsonBodyReqPayloadToolsItem:
 
         type = CreateChatCompletionJsonBodyReqPayloadToolsItemType(d.pop("type"))
 
-        create_chat_completion_json_body_req_payload_tools_item = cls(
+        return cls(
             function=function,
             type=type,
         )
-
-        return create_chat_completion_json_body_req_payload_tools_item

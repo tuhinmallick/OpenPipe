@@ -54,9 +54,7 @@ class CreateChatCompletionJsonBodyMessagesItemType1ContentType1ItemType0:
             d.pop("image_url")
         )
 
-        create_chat_completion_json_body_messages_item_type_1_content_type_1_item_type_0 = cls(
+        return cls(
             type=type,
             image_url=image_url,
         )
-
-        return create_chat_completion_json_body_messages_item_type_1_content_type_1_item_type_0

@@ -131,7 +131,7 @@ class Model:
         prompt_tokens = len(final_output.prompt_token_ids)
         completion_tokens = sum(len(x.token_ids) for x in final_output.outputs)
 
-        output = Output(
+        return Output(
             id=request_id,
             choices=[
                 Choice(text=choice.text, finish_reason=choice.finish_reason)
@@ -142,8 +142,6 @@ class Model:
                 completion_tokens=completion_tokens,
             ),
         )
-
-        return output
 
 
 # TODO: convert this to a FastAPI endpoint like the trainer so we can codegen a
