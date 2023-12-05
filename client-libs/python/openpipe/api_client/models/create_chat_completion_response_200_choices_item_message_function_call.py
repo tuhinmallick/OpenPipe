@@ -37,9 +37,7 @@ class CreateChatCompletionResponse200ChoicesItemMessageFunctionCall:
 
         arguments = d.pop("arguments")
 
-        create_chat_completion_response_200_choices_item_message_function_call = cls(
+        return cls(
             name=name,
             arguments=arguments,
         )
-
-        return create_chat_completion_response_200_choices_item_message_function_call

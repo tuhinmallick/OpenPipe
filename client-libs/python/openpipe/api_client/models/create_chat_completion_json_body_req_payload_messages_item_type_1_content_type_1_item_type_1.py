@@ -42,9 +42,7 @@ class CreateChatCompletionJsonBodyReqPayloadMessagesItemType1ContentType1ItemTyp
 
         text = d.pop("text")
 
-        create_chat_completion_json_body_req_payload_messages_item_type_1_content_type_1_item_type_1 = cls(
+        return cls(
             type=type,
             text=text,
         )
-
-        return create_chat_completion_json_body_req_payload_messages_item_type_1_content_type_1_item_type_1

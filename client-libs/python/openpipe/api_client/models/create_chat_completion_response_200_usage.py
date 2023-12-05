@@ -43,10 +43,8 @@ class CreateChatCompletionResponse200Usage:
 
         total_tokens = d.pop("total_tokens")
 
-        create_chat_completion_response_200_usage = cls(
+        return cls(
             prompt_tokens=prompt_tokens,
             completion_tokens=completion_tokens,
             total_tokens=total_tokens,
         )
-
-        return create_chat_completion_response_200_usage

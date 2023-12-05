@@ -28,9 +28,9 @@ def merge_openai_chunks(
 
     base_choices = base.choices.copy()
     for choice in chunk.choices:
-        base_choice = next((c for c in base_choices if c.index == choice.index), None)
-
-        if base_choice:
+        if base_choice := next(
+            (c for c in base_choices if c.index == choice.index), None
+        ):
             base_choice.finish_reason = (
                 choice.finish_reason or base_choice.finish_reason
             )

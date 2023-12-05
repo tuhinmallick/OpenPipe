@@ -17,13 +17,7 @@ class CreateChatCompletionJsonBodyFunctionCallType2:
     def to_dict(self) -> Dict[str, Any]:
         name = self.name
 
-        field_dict: Dict[str, Any] = {}
-        field_dict.update(
-            {
-                "name": name,
-            }
-        )
-
+        field_dict: Dict[str, Any] = {"name": name}
         return field_dict
 
     @classmethod
@@ -31,8 +25,6 @@ class CreateChatCompletionJsonBodyFunctionCallType2:
         d = src_dict.copy()
         name = d.pop("name")
 
-        create_chat_completion_json_body_function_call_type_2 = cls(
+        return cls(
             name=name,
         )
-
-        return create_chat_completion_json_body_function_call_type_2

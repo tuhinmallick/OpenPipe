@@ -14,8 +14,6 @@ def _get_kwargs(
     *,
     json_body: CreateChatCompletionJsonBody,
 ) -> Dict[str, Any]:
-    pass
-
     json_json_body = json_body.to_dict()
 
     return {
@@ -29,9 +27,7 @@ def _parse_response(
     *, client: Union[AuthenticatedClient, Client], response: httpx.Response
 ) -> Optional[CreateChatCompletionResponse200]:
     if response.status_code == HTTPStatus.OK:
-        response_200 = CreateChatCompletionResponse200.from_dict(response.json())
-
-        return response_200
+        return CreateChatCompletionResponse200.from_dict(response.json())
     if client.raise_on_unexpected_status:
         raise errors.UnexpectedStatus(response.status_code, response.content)
     else:

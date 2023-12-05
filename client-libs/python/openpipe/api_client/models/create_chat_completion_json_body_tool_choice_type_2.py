@@ -66,9 +66,7 @@ class CreateChatCompletionJsonBodyToolChoiceType2:
         else:
             function = CreateChatCompletionJsonBodyToolChoiceType2Function.from_dict(_function)
 
-        create_chat_completion_json_body_tool_choice_type_2 = cls(
+        return cls(
             type=type,
             function=function,
         )
-
-        return create_chat_completion_json_body_tool_choice_type_2

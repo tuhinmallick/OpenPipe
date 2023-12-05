@@ -20,19 +20,9 @@ class ReportResponse200:
     def to_dict(self) -> Dict[str, Any]:
         status: str
 
-        if isinstance(self.status, ReportResponse200StatusType0):
-            status = self.status.value
+        status = self.status.value
 
-        else:
-            status = self.status.value
-
-        field_dict: Dict[str, Any] = {}
-        field_dict.update(
-            {
-                "status": status,
-            }
-        )
-
+        field_dict: Dict[str, Any] = {"status": status}
         return field_dict
 
     @classmethod

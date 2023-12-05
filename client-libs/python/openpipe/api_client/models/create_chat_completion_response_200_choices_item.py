@@ -53,20 +53,7 @@ class CreateChatCompletionResponse200ChoicesItem:
     def to_dict(self) -> Dict[str, Any]:
         finish_reason: str
 
-        if isinstance(self.finish_reason, CreateChatCompletionResponse200ChoicesItemFinishReasonType0):
-            finish_reason = self.finish_reason.value
-
-        elif isinstance(self.finish_reason, CreateChatCompletionResponse200ChoicesItemFinishReasonType1):
-            finish_reason = self.finish_reason.value
-
-        elif isinstance(self.finish_reason, CreateChatCompletionResponse200ChoicesItemFinishReasonType2):
-            finish_reason = self.finish_reason.value
-
-        elif isinstance(self.finish_reason, CreateChatCompletionResponse200ChoicesItemFinishReasonType3):
-            finish_reason = self.finish_reason.value
-
-        else:
-            finish_reason = self.finish_reason.value
+        finish_reason = self.finish_reason.value
 
         index = self.index
         message = self.message.to_dict()

@@ -58,12 +58,10 @@ class GetTrainingInfoResponse200:
 
         model_slug = d.pop("modelSlug")
 
-        get_training_info_response_200 = cls(
+        return cls(
             training_data_url=training_data_url,
             hugging_face_model_id=hugging_face_model_id,
             base_model=base_model,
             project_name=project_name,
             model_slug=model_slug,
         )
-
-        return get_training_info_response_200

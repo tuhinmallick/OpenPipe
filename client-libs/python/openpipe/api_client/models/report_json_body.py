@@ -88,7 +88,7 @@ class ReportJsonBody:
         else:
             tags = ReportJsonBodyTags.from_dict(_tags)
 
-        report_json_body = cls(
+        return cls(
             requested_at=requested_at,
             received_at=received_at,
             req_payload=req_payload,
@@ -97,5 +97,3 @@ class ReportJsonBody:
             error_message=error_message,
             tags=tags,
         )
-
-        return report_json_body

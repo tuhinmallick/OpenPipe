@@ -50,9 +50,7 @@ class CreateChatCompletionJsonBodyToolsItem:
 
         type = CreateChatCompletionJsonBodyToolsItemType(d.pop("type"))
 
-        create_chat_completion_json_body_tools_item = cls(
+        return cls(
             function=function,
             type=type,
         )
-
-        return create_chat_completion_json_body_tools_item

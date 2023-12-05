@@ -58,13 +58,7 @@ class CreateChatCompletionJsonBodyMessagesItemType1:
             for content_type_1_item_data in self.content:
                 content_type_1_item: Dict[str, Any]
 
-                if isinstance(
-                    content_type_1_item_data, CreateChatCompletionJsonBodyMessagesItemType1ContentType1ItemType0
-                ):
-                    content_type_1_item = content_type_1_item_data.to_dict()
-
-                else:
-                    content_type_1_item = content_type_1_item_data.to_dict()
+                content_type_1_item = content_type_1_item_data.to_dict()
 
                 content.append(content_type_1_item)
 
